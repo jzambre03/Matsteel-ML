@@ -347,7 +347,6 @@ Evaluated predictions against known metallurgical principles and composition-pro
 | Ridge Regression | -0.521 ± 0.432 | 332.4 ± 90.4 | 250.3 ± 60.3 | Poor |
 | Random Forest | 0.137 ± 0.280 | 254.4 ± 94.9 | 186.3 ± 59.2 | Moderate |
 | XGBoost | 0.051 ± 0.502 | 260.8 ± 104.6 | 186.9 ± 67.8 | Variable |
-| TPOT AutoML | — | — | — | Not Evaluated |
 
 ### Key Findings
 

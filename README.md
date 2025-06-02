@@ -11,29 +11,29 @@ This project develops machine learning models to predict the yield strength of s
 
 ## 📚 Table of Contents
 
-- [🗂️ Dataset Description](#dataset-description)
-- [📊 Exploratory Data Analysis](#exploratory-data-analysis)
-- [🔧 Feature Engineering](#feature-engineering)
-- [⚙️ Methodology](#methodology)
-- [🤖 Models Implemented](#models-implemented)
-- [📈 Results](#results)
-- [❓ Assignment Question 1: Single Performance Metric Prediction](#assignment-question-1-single-performance-metric-prediction)
-- [🔍 Assignment Question 2: Finding Better Compositions](#assignment-question-2-finding-better-compositions)
-- [📏 Assignment Question 3: Additional Metrics for Better Design](#assignment-question-3-additional-metrics-for-better-design)
-- [🧪 Materials Science Insights](#materials-science-insights)
-- [🚀 Future Applications](#future-applications)
+- [Dataset Description](#dataset-description)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Feature Engineering](#feature-engineering)
+- [Methodology](#methodology)
+- [Models Implemented](#models-implemented)
+- [Results](#results)
+- [Assignment Question 1: Single Performance Metric Prediction](#assignment-question-1-single-performance-metric-prediction)
+- [Assignment Question 2: Finding Better Compositions](#assignment-question-2-finding-better-compositions)
+- [Assignment Question 3: Additional Metrics for Better Design](#assignment-question-3-additional-metrics-for-better-design)
+- [Materials Science Insights](#materials-science-insights)
+- [Future Applications](#future-applications)
 
 ## 🗂️ Dataset Description
 
-**📦 Source:** MatBench Steels - A benchmark dataset for materials property prediction  
-**🎯 Target Variable:** Yield Strength (MPa)  
-**📊 Sample Size:** 312 steel compositions  
-**🔹 Features:** Chemical composition + Magpie-derived atomic properties  
+**Source:** MatBench Steels - A benchmark dataset for materials property prediction  
+**Target Variable:** Yield Strength (MPa)  
+**Sample Size:** 312 steel compositions  
+**Features:** Chemical composition + Magpie-derived atomic properties  
 
 ### 🔑 Key Characteristics:
-- **⚗️ Composition Features:** Weight percentages of various alloying elements (Fe, C, Mn, Si, Cr, Ni, Mo, V, Nb, Co, Al, Ti, etc.)
-- **🧬 Magpie Features:** 132 physics-informed descriptors derived from atomic properties
-- **📏 Target Range:** Yield strength values ranging from ~200 to ~2400 MPa
+- **⚗Composition Features:** Weight percentages of various alloying elements (Fe, C, Mn, Si, Cr, Ni, Mo, V, Nb, Co, Al, Ti, etc.)
+- **Magpie Features:** 132 physics-informed descriptors derived from atomic properties
+- **Target Range:** Yield strength values ranging from ~200 to ~2400 MPa
 
 ## 📊 Exploratory Data Analysis
 
@@ -55,10 +55,10 @@ yield_strength_stats = {
 ```
 
 **🔍 Key Findings:**
-- **📈 Distribution Shape:** Approximately normal distribution with slight right skew
-- **🏭 Engineering Range:** Covers medium-strength (1000-1500 MPa) to ultra-high strength (>2000 MPa) steels
-- **✅ No Outliers:** Clean dataset with no extreme outliers requiring removal
-- **🔢 Sample Size:** 312 samples suitable for machine learning approaches
+- **Distribution Shape:** Approximately normal distribution with slight right skew
+- **Engineering Range:** Covers medium-strength (1000-1500 MPa) to ultra-high strength (>2000 MPa) steels
+- **No Outliers:** Clean dataset with no extreme outliers requiring removal
+- **Sample Size:** 312 samples suitable for machine learning approaches
 
 ### 2️⃣ Elemental Composition Correlation Analysis
 
@@ -76,10 +76,10 @@ element_correlations = {
 ```
 
 **🧪 Materials Science Insights:**
-- **🥇 Titanium** shows strongest correlation (r=0.456) - acts as strong carbide/nitride former
-- **🥈 Chromium** (r=0.399) enhances hardenability and provides solid solution strengthening
-- **🥉 Nickel** (r=0.362) balances strength with toughness in steel microstructure
-- **⚫ Iron (Fe)** naturally dominates composition (~85-95% in most samples)
+- **Titanium** shows strongest correlation (r=0.456) - acts as strong carbide/nitride former
+- **Chromium** (r=0.399) enhances hardenability and provides solid solution strengthening
+- **Nickel** (r=0.362) balances strength with toughness in steel microstructure
+- **Iron (Fe)** naturally dominates composition (~85-95% in most samples)
 
 ### 3️⃣ Magpie Feature Correlation Analysis
 
@@ -106,10 +106,10 @@ top_magpie_features = {
 ```
 
 **🔬 Physics-Based Insights:**
-- **⚡ Electronegativity** (r=0.724) - strongest predictor, relates to bond strength
-- **🔋 Electronic Structure Features** dominate top correlations (valence, unfilled shells)
-- **📐 Atomic Volume Features** indicate size effects in strengthening mechanisms
-- **📊 Statistical Descriptors** (mean, std, range) capture compositional complexity effects
+- **Electronegativity** (r=0.724) - strongest predictor, relates to bond strength
+- **Electronic Structure Features** dominate top correlations (valence, unfilled shells)
+- **Atomic Volume Features** indicate size effects in strengthening mechanisms
+- **Statistical Descriptors** (mean, std, range) capture compositional complexity effects
 
 ### 4️⃣ Scatter Plot Analysis of Key Relationships
 
@@ -137,9 +137,9 @@ scatter_analysis = {
 ```
 
 **📉 Trend Line Analysis:**
-- **📈 Strong Linear Relationships:** Ti, Cr show clear linear strengthening effects
-- **🎯 Compositional Thresholds:** Some elements show strengthening only above certain concentrations
-- **🔄 Interactive Effects:** Scatter in plots suggests element interactions are important
+- **Strong Linear Relationships:** Ti, Cr show clear linear strengthening effects
+- **Compositional Thresholds:** Some elements show strengthening only above certain concentrations
+- **Interactive Effects:** Scatter in plots suggests element interactions are important
 
 ### 5️⃣ Feature-Feature Correlation Heatmap
 
@@ -163,10 +163,10 @@ correlation_clusters = {
 ```
 
 **🔍 Key Correlation Patterns:**
-- **🔗 High Internal Correlations:** Electronic features are highly correlated (r > 0.8)
-- **🔄 Redundancy Identified:** Many statistical descriptors provide similar information
-- **✂️ Feature Selection Opportunity:** ~30-40% dimensionality reduction possible
-- **🎨 Color Scheme:** Used absolute correlation values to highlight relationship strength
+- **High Internal Correlations:** Electronic features are highly correlated (r > 0.8)
+- **Redundancy Identified:** Many statistical descriptors provide similar information
+- **✂Feature Selection Opportunity:** ~30-40% dimensionality reduction possible
+- **Color Scheme:** Used absolute correlation values to highlight relationship strength
 
 ### 6️⃣ Data Quality and Structure Assessment
 
@@ -191,14 +191,14 @@ data_quality_assessment = {
 ```
 
 **📋 Summary of EDA Findings:**
-- **✅ High-Quality Dataset:** No missing values, outliers, or data quality issues
-- **🔄 Feature Redundancy:** Significant correlation among Magpie features suggests feature selection opportunities
-- **🔬 Physics-Based Features Dominate:** Magpie features show stronger correlations than raw composition
-- **🧩 Complex Relationships:** Both linear and non-linear patterns visible in element-strength relationships
-- **🎯 Modeling Strategy Implications:** 
-  - ✂️ Feature selection/dimensionality reduction beneficial
-  - 📈 Non-linear models likely to outperform linear approaches
-  - ✅ Cross-validation essential due to limited sample size (312 samples, 132 features)
+- **High-Quality Dataset:** No missing values, outliers, or data quality issues
+- **Feature Redundancy:** Significant correlation among Magpie features suggests feature selection opportunities
+- **Physics-Based Features Dominate:** Magpie features show stronger correlations than raw composition
+- **Complex Relationships:** Both linear and non-linear patterns visible in element-strength relationships
+- **Modeling Strategy Implications:** 
+  - Feature selection/dimensionality reduction beneficial
+  - Non-linear models likely to outperform linear approaches
+  - Cross-validation essential due to limited sample size (312 samples, 132 features)
 
 These EDA insights directly informed our subsequent feature engineering and model selection strategies, leading to successful yield strength prediction with R² ≈ 0.78.
 
@@ -209,16 +209,16 @@ Direct weight percentages of alloying elements in steel compositions.
 
 ### 2️⃣ Magpie Features
 Physics-based descriptors including:
-- **⚛️ Atomic Properties:** Atomic number, atomic weight, atomic radius
-- **🔋 Electronic Properties:** Valence electrons, electronegativity
-- **🌡️ Thermodynamic Properties:** Melting temperature, density
-- **📊 Statistical Descriptors:** Mean, standard deviation, range, mode for each property
+- **Atomic Properties:** Atomic number, atomic weight, atomic radius
+- **Electronic Properties:** Valence electrons, electronegativity
+- **Thermodynamic Properties:** Melting temperature, density
+- **Statistical Descriptors:** Mean, standard deviation, range, mode for each property
 
 ### 3️⃣ Feature Selection Approaches
-- **📊 Correlation Analysis:** Identified top 15 features most correlated with yield strength
-- **🌟 Feature Importance:** Used Random Forest importance scores
-- **✂️ Correlation Removal:** Eliminated highly correlated features (threshold > 0.9) while preserving predictive power
-- **🔗 Combined Approach:** Merged composition and Magpie features for comprehensive modeling
+- **Correlation Analysis:** Identified top 15 features most correlated with yield strength
+- **Feature Importance:** Used Random Forest importance scores
+- **✂Correlation Removal:** Eliminated highly correlated features (threshold > 0.9) while preserving predictive power
+- **Combined Approach:** Merged composition and Magpie features for comprehensive modeling
 
 ## ⚙️ Methodology
 
@@ -234,10 +234,10 @@ Applied StandardScaler to normalize all features (composition + Magpie) to have 
 Implemented 90-10 split using train_test_split with random_state=42 for reproducibility. Applied scaling **after** the split to prevent data leakage - fitted scaler only on training data, then transformed both train and test sets.
 
 **🛡️ Data Leakage Prevention:**
-- 🔐 Split data **before** any preprocessing
-- 🎯 Fitted scaler only on X_train 
-- 🔄 Applied same scaling transformation to X_test
-- ✅ Ensured no test set information influenced training process
+- Split data **before** any preprocessing
+- Fitted scaler only on X_train 
+- Applied same scaling transformation to X_test
+- Ensured no test set information influenced training process
 
 **🔗 Feature Engineering Pipeline:**
 Combined 14 composition features (elemental weight fractions) with 132 Magpie features (atomic descriptors) creating a 146-dimensional feature space. This captures both direct compositional effects and underlying physics-based relationships.
@@ -252,9 +252,9 @@ Implemented three complementary models: Random Forest (handles multicollinearity
 
 **⚙️ Hyperparameter Optimization:**
 Used RandomizedSearchCV with 5-fold cross-validation for systematic hyperparameter tuning:
-- **🌲 Random Forest:** n_estimators (50-300), max_depth (None/10/20/30), min_samples_split (2-6)
-- **🚀 XGBoost:** n_estimators (50-300), max_depth (3-10), learning_rate (0.01-0.31), subsample (0.6-1.0)
-- **📏 Ridge:** alpha (1e-4 to 1e2), various solvers
+- **Random Forest:** n_estimators (50-300), max_depth (None/10/20/30), min_samples_split (2-6)
+- **XGBoost:** n_estimators (50-300), max_depth (3-10), learning_rate (0.01-0.31), subsample (0.6-1.0)
+- **Ridge:** alpha (1e-4 to 1e2), various solvers
 
 **🛡️ Overfitting Prevention:**
 Monitored training vs. testing performance gaps. Applied cross-validation, correlation removal, and ensemble averaging to improve generalization.
@@ -262,9 +262,9 @@ Monitored training vs. testing performance gaps. Applied cross-validation, corre
 ### 📏 Evaluation Metrics
 
 **🎯 Primary Metrics:**
-- **📊 R²:** Explains variance in yield strength predictions (materials reliability)
-- **📐 RMSE:** Error in MPa units (directly interpretable for engineers)
-- **📋 MAE:** Robust error estimation less sensitive to outliers
+- **R²:** Explains variance in yield strength predictions (materials reliability)
+- **RMSE:** Error in MPa units (directly interpretable for engineers)
+- **MAE:** Robust error estimation less sensitive to outliers
 
 **✅ Cross-Validation:**
 5-fold cross-validation to assess model stability and generalization across different data subsets.
@@ -278,60 +278,60 @@ Validated predictions against known metallurgical principles and composition-pro
 **📏 Linear model with L2 regularization** designed to address multicollinearity and prevent overfitting in high-dimensional feature spaces.
 
 **🔑 Key Features:**
-- **📐 L2 penalty term** controlling model complexity through alpha parameter
-- **📊 Standardized features** ensuring equal treatment of composition and Magpie descriptors
-- **🛡️ Robust to multicollinearity** common in materials datasets
-- **📋 Interpretable coefficients** for understanding elemental contributions
+- **L2 penalty term** controlling model complexity through alpha parameter
+- **Standardized features** ensuring equal treatment of composition and Magpie descriptors
+- **Robust to multicollinearity** common in materials datasets
+- **Interpretable coefficients** for understanding elemental contributions
 
 **⚙️ Hyperparameter Optimization:**
-- **📈 Alpha range:** 1e-4 to 1e2 (log-uniform distribution)
-- **🔧 Solver optimization** across multiple algorithms (auto, svd, cholesky, lsqr, sparse_cg, sag, saga)
-- **✅ Cross-validation** driven parameter selection
+- **Alpha range:** 1e-4 to 1e2 (log-uniform distribution)
+- **Solver optimization** across multiple algorithms (auto, svd, cholesky, lsqr, sparse_cg, sag, saga)
+- **Cross-validation** driven parameter selection
 
 ### 2️⃣ Random Forest Regressor
-**🌲 Ensemble method combining multiple decision trees** with built-in feature selection and non-linear relationship capture.
+**Ensemble method combining multiple decision trees** with built-in feature selection and non-linear relationship capture.
 
 **🔑 Key Features:**
-- **📦 Bootstrap aggregating** reducing overfitting through ensemble averaging
-- **🎲 Random feature sampling** at each split mitigating multicollinearity effects
-- **⭐ Implicit feature importance** ranking identifying critical alloying elements
-- **🔄 Non-parametric approach** capturing complex elemental interactions
+- **Bootstrap aggregating** reducing overfitting through ensemble averaging
+- **Random feature sampling** at each split mitigating multicollinearity effects
+- **Implicit feature importance** ranking identifying critical alloying elements
+- **Non-parametric approach** capturing complex elemental interactions
 
 **⚙️ Hyperparameter Optimization:**
-- **🌳 Number of estimators:** 50-500 trees
-- **📏 Maximum depth:** 10-50 levels with None option for unrestricted growth
-- **🔢 Minimum samples split:** 2-20 samples
-- **📦 Bootstrap sampling** optimization
+- **Number of estimators:** 50-500 trees
+- **Maximum depth:** 10-50 levels with None option for unrestricted growth
+- **Minimum samples split:** 2-20 samples
+- **Bootstrap sampling** optimization
 
 ### 3️⃣ XGBoost Regressor
-**🚀 Gradient boosting algorithm** with advanced regularization and sequential error correction.
+**Gradient boosting algorithm** with advanced regularization and sequential error correction.
 
 **🔑 Key Features:**
-- **📈 Sequential tree building** focusing on prediction residuals
-- **🛡️ L1 and L2 regularization** preventing overfitting
-- **🔧 Advanced missing value handling**
-- **⚡ Optimized computational efficiency** through parallel processing
+- **Sequential tree building** focusing on prediction residuals
+- **L1 and L2 regularization** preventing overfitting
+- **Advanced missing value handling**
+- **Optimized computational efficiency** through parallel processing
 
 **⚙️ Hyperparameter Optimization:**
-- **📊 Learning rate:** 0.01-0.3 controlling step size
-- **📏 Maximum depth:** 3-10 levels balancing complexity and generalization
-- **🎲 Subsample ratio:** 0.6-1.0 for stochastic training
-- **⚖️ Regularization parameters** (alpha, lambda) fine-tuning
+- **Learning rate:** 0.01-0.3 controlling step size
+- **Maximum depth:** 3-10 levels balancing complexity and generalization
+- **Subsample ratio:** 0.6-1.0 for stochastic training
+- **⚖Regularization parameters** (alpha, lambda) fine-tuning
 
 ### 4️⃣ TPOT AutoML
-**🤖 Automated machine learning pipeline** utilizing genetic programming for optimal algorithm selection and hyperparameter tuning.
+**Automated machine learning pipeline** utilizing genetic programming for optimal algorithm selection and hyperparameter tuning.
 
 **🔑 Key Features:**
-- **🧬 Evolutionary algorithm** exploring multiple model architectures
-- **🔧 Automated feature preprocessing** and selection
-- **🔗 Pipeline optimization** including data transformations
-- **✅ Cross-validation** based fitness evaluation
+- **Evolutionary algorithm** exploring multiple model architectures
+- **Automated feature preprocessing** and selection
+- **Pipeline optimization** including data transformations
+- **Cross-validation** based fitness evaluation
 
 **⚙️ Configuration:**
-- **👥 Population size** and generation limits for genetic algorithm
-- **🎯 Multiple regression algorithms** in search space
-- **🔧 Automated hyperparameter optimization**
-- **⚖️ Pipeline complexity** control
+- **Population size** and generation limits for genetic algorithm
+- **Multiple regression algorithms** in search space
+- **Automated hyperparameter optimization**
+- **⚖Pipeline complexity** control
 
 ## 📈 Results
 
@@ -339,10 +339,10 @@ Validated predictions against known metallurgical principles and composition-pro
 
 | Model | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Overfitting Gap |
 |-------|----------|---------|------------|-----------|-----------|----------|-----------------|
-| 📏 Ridge Regression | 0.511 | 0.420 | 211.9 | 217.3 | 152.9 | 142.2 | 0.091 |
-| 🌲 Random Forest | 0.971 | 0.871 | 51.9 | 102.6 | 36.3 | 73.2 | 0.100 |
-| 🚀 XGBoost | 0.974 | 0.884 | 49.3 | 97.3 | 36.0 | 71.0 | 0.090 |
-| 🤖 TPOT AutoML | 0.969 | 0.847 | 53.3 | 111.5 | 37.4 | 77.4 | 0.122 |
+| Ridge Regression | 0.511 | 0.420 | 211.9 | 217.3 | 152.9 | 142.2 | 0.091 |
+| Random Forest | 0.971 | 0.871 | 51.9 | 102.6 | 36.3 | 73.2 | 0.100 |
+| XGBoost | 0.974 | 0.884 | 49.3 | 97.3 | 36.0 | 71.0 | 0.090 |
+| TPOT AutoML | 0.969 | 0.847 | 53.3 | 111.5 | 37.4 | 77.4 | 0.122 |
 
 ### ✅ Cross-Validation Analysis
 
@@ -350,9 +350,9 @@ Validated predictions against known metallurgical principles and composition-pro
 
 | Model | CV R² (Test) | CV RMSE (Test) | CV MAE (Test) | Stability |
 |-------|--------------|----------------|---------------|-----------|
-| 📏 Ridge Regression | -0.521 ± 0.432 | 332.4 ± 90.4 | 250.3 ± 60.3 | ❌ Poor |
-| 🌲 Random Forest | 0.137 ± 0.280 | 254.4 ± 94.9 | 186.3 ± 59.2 | ⚠️ Moderate |
-| 🚀 XGBoost | 0.051 ± 0.502 | 260.8 ± 104.6 | 186.9 ± 67.8 | ⚠️ Variable |
+| Ridge Regression | -0.521 ± 0.432 | 332.4 ± 90.4 | 250.3 ± 60.3 | ❌ Poor |
+| Random Forest | 0.137 ± 0.280 | 254.4 ± 94.9 | 186.3 ± 59.2 | ⚠️ Moderate |
+| XGBoost | 0.051 ± 0.502 | 260.8 ± 104.6 | 186.9 ± 67.8 | ⚠️ Variable |
 
 ### 🔍 Key Findings
 
@@ -363,70 +363,70 @@ Validated predictions against known metallurgical principles and composition-pro
 - ✅ Superior handling of non-linear relationships
 
 **💡 Model Insights:**
-1. **🌳 Tree-based models** (Random Forest, XGBoost) significantly outperformed linear Ridge regression
-2. **🔗 Ensemble methods** effectively captured complex elemental interactions
-3. **⚠️ Overfitting concerns** evident across all models with train-test performance gaps
-4. **📊 Cross-validation stability** varies significantly, indicating dataset sensitivity
+1. **Tree-based models** (Random Forest, XGBoost) significantly outperformed linear Ridge regression
+2. **Ensemble methods** effectively captured complex elemental interactions
+3. **Overfitting concerns** evident across all models with train-test performance gaps
+4. **Cross-validation stability** varies significantly, indicating dataset sensitivity
 
 **📊 Performance Interpretation:**
-- **📏 Ridge Regression:** Baseline linear model with moderate performance, limited by linear assumptions
-- **🌲 Random Forest:** Strong performance with good interpretability through feature importance
-- **🚀 XGBoost:** Best overall performance with optimized gradient boosting
-- **🤖 TPOT:** Competitive automated solution requiring minimal manual tuning
+- **Ridge Regression:** Baseline linear model with moderate performance, limited by linear assumptions
+- **Random Forest:** Strong performance with good interpretability through feature importance
+- **XGBoost:** Best overall performance with optimized gradient boosting
+- **TPOT:** Competitive automated solution requiring minimal manual tuning
 
 ### ⭐ Feature Importance Analysis
 
 **🔝 Top Contributing Features (Random Forest):**
-1. **🔩 Titanium (Ti)** - Strengthening and corrosion resistance (18.84% importance)
-2. **⚫ Manganese (Mn)** - Deoxidizer and austenite stabilizer (12.64% importance)
-3. **🔸 Chromium (Cr)** - Primary corrosion resistance element (10.92% importance)
-4. **⚪ Silicon (Si)** - Deoxidizer and strength enhancer (8.76% importance)
-5. **🔶 Iron (Fe)** - Base matrix element (7.94% importance)
-6. **⚪ Nickel (Ni)** - Austenite stabilizer and toughness (7.49% importance)
-7. **🔵 Cobalt (Co)** - High-temperature strength (7.20% importance)
-8. **⚪ Aluminum (Al)** - Deoxidizer and grain refiner (6.86% importance)
-9. **⚫ Carbon (C)** - Interstitial strengthening element (5.65% importance)
-10. **🔸 Molybdenum (Mo)** - Solid solution strengthener (3.99% importance)
+1. **Titanium (Ti)** - Strengthening and corrosion resistance (18.84% importance)
+2. **Manganese (Mn)** - Deoxidizer and austenite stabilizer (12.64% importance)
+3. **Chromium (Cr)** - Primary corrosion resistance element (10.92% importance)
+4. **Silicon (Si)** - Deoxidizer and strength enhancer (8.76% importance)
+5. **Iron (Fe)** - Base matrix element (7.94% importance)
+6. **Nickel (Ni)** - Austenite stabilizer and toughness (7.49% importance)
+7. **Cobalt (Co)** - High-temperature strength (7.20% importance)
+8. **Aluminum (Al)** - Deoxidizer and grain refiner (6.86% importance)
+9. **Carbon (C)** - Interstitial strengthening element (5.65% importance)
+10. **Molybdenum (Mo)** - Solid solution strengthener (3.99% importance)
 
 **🔍 Key Insights:**
-- **🧪 Raw elemental compositions dominate** over Magpie physics-informed features
-- **🥇 Titanium emerges as the most critical element** for yield strength prediction
-- **⚗️ Traditional alloying elements** (Cr, Mn, Ni) show expected high importance
-- **🔬 Microalloying elements** (Ti, Al, Si) play crucial roles in strength development
-- **✅ The model effectively captures metallurgical knowledge** through elemental importance rankings
+- **Raw elemental compositions dominate** over Magpie physics-informed features
+- **Titanium emerges as the most critical element** for yield strength prediction
+- **⚗Traditional alloying elements** (Cr, Mn, Ni) show expected high importance
+- **Microalloying elements** (Ti, Al, Si) play crucial roles in strength development
+- **The model effectively captures metallurgical knowledge** through elemental importance rankings
 
 ## 🧪 Materials Science Insights
 
 ### 1️⃣ Composition-Property Relationships
 
 #### 🔑 Critical Alloying Elements:
-- **⚫ Carbon (C):** Primary strengthening element through solid solution and carbide formation
-- **🔸 Chromium (Cr):** Provides corrosion resistance and hardenability
-- **🔸 Molybdenum (Mo):** Enhances strength and creep resistance
-- **⚪ Nickel (Ni):** Improves toughness and ductility
+- **Carbon (C):** Primary strengthening element through solid solution and carbide formation
+- **Chromium (Cr):** Provides corrosion resistance and hardenability
+- **Molybdenum (Mo):** Enhances strength and creep resistance
+- **Nickel (Ni):** Improves toughness and ductility
 
 #### ⚛️ Physics-Based Understanding:
-- **📏 Atomic Weight:** Correlates with substitutional solid solution strengthening
-- **🌡️ Melting Temperature:** Indicates bond strength and thermal stability
-- **⚡ Electronegativity:** Affects interatomic bonding and phase stability
+- **Atomic Weight:** Correlates with substitutional solid solution strengthening
+- **Melting Temperature:** Indicates bond strength and thermal stability
+- **Electronegativity:** Affects interatomic bonding and phase stability
 
 ### 2️⃣ Why Random Forest Works Well for Steel Data:
 
-1. **🔗 Multicollinearity Tolerance:** RF handles correlated alloying elements effectively
-2. **📈 Non-linear Relationships:** Captures complex composition-property interactions
-3. **🧩 Feature Interactions:** Automatically identifies synergistic effects between elements
-4. **🛡️ Robust to Outliers:** Important for materials data with measurement variations
+1. **Multicollinearity Tolerance:** RF handles correlated alloying elements effectively
+2. **Non-linear Relationships:** Captures complex composition-property interactions
+3. **Feature Interactions:** Automatically identifies synergistic effects between elements
+4. **Robust to Outliers:** Important for materials data with measurement variations
 
 ## 🚀 Future Applications
 
 ### 1️⃣ Composition Design and Optimization
-**🎯 Multi-objective optimization** considering strength maximization, cost minimization, manufacturing feasibility, and environmental impact.
+**Multi-objective optimization** considering strength maximization, cost minimization, manufacturing feasibility, and environmental impact.
 
 ### 2️⃣ Additional Performance Metrics
-**📊 Comprehensive design** incorporating ductility, fatigue resistance, corrosion resistance, thermal stability, machinability, weldability, and economic factors.
+**Comprehensive design** incorporating ductility, fatigue resistance, corrosion resistance, thermal stability, machinability, weldability, and economic factors.
 
 ### 3️⃣ ML-Assisted Discovery Workflow
-**🔄 Integrated approach:** Screening → Optimization → Experimental Validation → Model Refinement → Scale-up for industrial implementation.
+**Integrated approach:** Screening → Optimization → Experimental Validation → Model Refinement → Scale-up for industrial implementation.
 
 ## Key Challenges & Solutions
 

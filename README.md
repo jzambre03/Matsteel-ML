@@ -35,6 +35,8 @@ This project develops machine learning models to predict the yield strength of s
 - **Magpie Features:** 132 physics-informed descriptors derived from atomic properties
 - **Target Range:** Yield strength values ranging from ~200 to ~2400 MPa
 
+---
+
 ## 📊 Exploratory Data Analysis
 
 Our EDA focused on **6 key analyses** to understand the steel dataset and inform our modeling approach:
@@ -202,6 +204,8 @@ data_quality_assessment = {
 
 These EDA insights directly informed our subsequent feature engineering and model selection strategies, leading to successful yield strength prediction with R² ≈ 0.78.
 
+---
+
 ## 🔧 Feature Engineering
 
 ### 1️⃣ Composition Features
@@ -219,6 +223,8 @@ Physics-based descriptors including:
 - **Feature Importance:** Used Random Forest importance scores
 - **✂Correlation Removal:** Eliminated highly correlated features (threshold > 0.9) while preserving predictive power
 - **Combined Approach:** Merged composition and Magpie features for comprehensive modeling
+
+---
 
 ## ⚙️ Methodology
 
@@ -271,6 +277,8 @@ Monitored training vs. testing performance gaps. Applied cross-validation, corre
 
 **🧪 Materials Validation:**
 Validated predictions against known metallurgical principles and composition-property relationships to ensure physically meaningful results.
+
+---
 
 ## 🤖 Models Implemented
 
@@ -332,6 +340,8 @@ Validated predictions against known metallurgical principles and composition-pro
 - **Multiple regression algorithms** in search space
 - **Automated hyperparameter optimization**
 - **⚖Pipeline complexity** control
+
+---
 
 ## 📈 Results
 
@@ -395,6 +405,8 @@ Validated predictions against known metallurgical principles and composition-pro
 - **Microalloying elements** (Ti, Al, Si) play crucial roles in strength development
 - **The model effectively captures metallurgical knowledge** through elemental importance rankings
 
+---
+
 ## 🧪 Materials Science Insights
 
 ### 1️⃣ Composition-Property Relationships
@@ -417,6 +429,8 @@ Validated predictions against known metallurgical principles and composition-pro
 3. **Feature Interactions:** Automatically identifies synergistic effects between elements
 4. **Robust to Outliers:** Important for materials data with measurement variations
 
+---
+
 ## 🚀 Future Applications
 
 ### 1️⃣ Composition Design and Optimization
@@ -427,6 +441,8 @@ Validated predictions against known metallurgical principles and composition-pro
 
 ### 3️⃣ ML-Assisted Discovery Workflow
 **Integrated approach:** Screening → Optimization → Experimental Validation → Model Refinement → Scale-up for industrial implementation.
+
+---
 
 ## Key Challenges & Solutions
 
@@ -453,6 +469,8 @@ Validated predictions against known metallurgical principles and composition-pro
 - Physics-informed feature engineering
 - Combination with mechanistic models
 
+---
+
 ## Conclusions
 
 1. **Model Performance**: Achieved R² ≈ 0.78 for yield strength prediction
@@ -460,6 +478,8 @@ Validated predictions against known metallurgical principles and composition-pro
 3. **Materials Insights**: Carbon, chromium, and molybdenum identified as critical strengthening elements
 4. **Practical Application**: Models suitable for composition screening and design optimization
 5. **Future Work**: Address overfitting, incorporate additional properties, expand to other steel grades
+
+---
 
 ## Contributing
 
@@ -470,9 +490,13 @@ Contributions welcome! Areas for improvement:
 - Integration with thermodynamic databases
 - Uncertainty quantification
 
+---
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
 
 ## Acknowledgments
 
@@ -481,8 +505,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Materials science community for domain expertise
 
 ---
-
-*For questions or collaborations, please contact [jayeshszambre@gmail.com]* 
 
 ## Assignment Question 1: Single Performance Metric Prediction
 
@@ -532,13 +554,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Residual Analysis**: Checked for systematic biases
 - **Materials Science Validation**: Results align with metallurgical principles
 
+---
+
 ## Assignment Question 2: Finding Better Compositions
 
 ### 📌 Composition Optimization Using Machine Learning
 
 Our ML model establishes a predictive relationship between elemental composition (via derived features) and **yield strength**, enabling **computational alloy design** through the following strategic avenues:
-
----
 
 ### 1. How the Model Aids in Designing Better Compositions
 
@@ -573,8 +595,6 @@ We can use this model in:
 - **Bayesian Optimization** or **Genetic Algorithms** to iteratively refine compositions.
 - **Active learning frameworks** to guide experimentation and accelerate model improvement.
 
----
-
 ### 2. Multi-Metric Design Integration
 
 In real-world steel design, yield strength is only one metric. Other key metrics include:
@@ -588,8 +608,6 @@ These metrics can be:
 - **Combined** in a **multi-objective optimization** framework (e.g., Pareto front analysis).
 - **Weighted and constrained** using industrial requirements.
 
----
-
 ### 3. Quantifiable Benefits
 
 | Metric                 | Traditional Approach | ML-Guided Design |
@@ -600,7 +618,6 @@ These metrics can be:
 | Success Rate           | ~10%                 | >60%             |
 | Cost                   | High                 | ~30% Savings     |
 
----
 
 ### 4. Feature-Guided Alloy Tuning
 
@@ -615,7 +632,6 @@ Based on feature importance from both correlation and PCA analysis:
 - **Nickel, Manganese**: Improve toughness and phase stability.
 - **Microalloying (e.g., Nb, V)**: Enables grain refinement.
 
----
 
 ### 5. Implementation Roadmap
 
@@ -631,16 +647,13 @@ Based on feature importance from both correlation and PCA analysis:
 #### **Phase 4: Industry Deployment**
 - Integrate into manufacturing tools with real-time prediction and adaptation.
 
+---
 
 ## Assignment Question 3: Additional Metrics for Better Design
-
----
 
 ## 🧠💡 Multi-Metric Alloy Design with ML: Beyond Yield Strength
 
 Designing high-performance alloys isn't just about maximizing **yield strength**—it's about finding the right **balance** between mechanical, chemical, and economic factors. In real-world applications, especially in aerospace, automotive, or data storage, multiple metrics must be optimized **simultaneously**.
-
----
 
 ### 🔍 1. Additional Metrics That Matter
 
@@ -657,8 +670,6 @@ Designing high-performance alloys isn't just about maximizing **yield strength**
 
 These properties can be integrated via **multi-output regression**, **custom loss functions**, or **Pareto optimization** to guide design decisions.
 
----
-
 ### 🔬 2. Additional Factors Affecting Yield Strength
 
 In addition to elemental composition, several **processing and microstructural variables** influence yield strength and should be captured when available:
@@ -671,8 +682,6 @@ In addition to elemental composition, several **processing and microstructural v
 
 Incorporating these either as direct features or through feature engineering improves model accuracy and interpretability.
 
----
-
 ### 🔧 3. Incorporating Metrics into the ML Workflow
 
 | Strategy                     | Description                                                                 |
@@ -682,7 +691,6 @@ Incorporating these either as direct features or through feature engineering imp
 | **Pareto Optimization**     | Use evolutionary algorithms or BO to explore trade-offs                     |
 | **Active Learning Loops**   | Guide lab experiments by sampling uncertain but promising candidates        |
 
----
 
 ### ✅ Summary
 
@@ -696,3 +704,5 @@ To move beyond single-metric prediction, we must:
 This ensures our ML-assisted design process not only predicts well—but **designs better materials**, faster.
 
 ---
+
+*For questions or collaborations, please contact [jayeshszambre@gmail.com]* 

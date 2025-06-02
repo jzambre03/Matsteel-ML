@@ -22,8 +22,6 @@ This project develops machine learning models to predict the yield strength of s
 - [📏 Assignment Question 3: Additional Metrics for Better Design](#assignment-question-3-additional-metrics-for-better-design)
 - [🧪 Materials Science Insights](#materials-science-insights)
 - [🚀 Future Applications](#future-applications)
-- [Installation & Usage](#installation--usage)
-- [File Structure](#file-structure)
 
 ## 🗂️ Dataset Description
 

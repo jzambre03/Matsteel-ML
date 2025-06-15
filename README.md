@@ -49,9 +49,9 @@ Our EDA focused on **6 key analyses** to understand the steel dataset and inform
 yield_strength_stats = {
     'min': 1005.9,      # MPa (corrected from data)
     'max': 2510.3,      # MPa (corrected from data)  
-    'mean': 1582.8,     # MPa
-    'median': 1580.5,   # MPa
-    'std': 312.4,       # MPa
+    'mean': 1420.9,     # MPa
+    'median': 1344.2,   # MPa
+    'std': 301.4,       # MPa
     'range': 1504.4     # MPa
 }
 ```
@@ -59,7 +59,6 @@ yield_strength_stats = {
 **🔍 Key Findings:**
 - **Distribution Shape:** Approximately normal distribution with slight right skew
 - **Engineering Range:** Covers medium-strength (1000-1500 MPa) to ultra-high strength (>2000 MPa) steels
-- **No Outliers:** Clean dataset with no extreme outliers requiring removal
 - **Sample Size:** 312 samples suitable for machine learning approaches
 
 ### 2️⃣ Elemental Composition Correlation Analysis
@@ -68,19 +67,19 @@ yield_strength_stats = {
 ```python
 # Direct correlations observed in our data
 element_correlations = {
-    'Ti': 0.456,     # Titanium - strongest positive correlation
-    'Cr': 0.399,     # Chromium - hardenability enhancement  
-    'Ni': 0.362,     # Nickel - toughness-strength balance
-    'Mo': 0.234,     # Molybdenum - precipitation strengthening
-    'C': 0.189,      # Carbon - interstitial strengthening
-    'Mn': 0.145      # Manganese - solid solution strengthening
+    'Ti': 0.511,     # Titanium - strongest positive correlation
+    'Cr': 0.409,     # Chromium - hardenability enhancement  
+    'Ni': 0.257,     # Nickel - toughness-strength balance
+    'Mo': 0.066,     # Molybdenum - precipitation strengthening
+    'C': 0.149,      # Carbon - interstitial strengthening
+    'Mn': 0.173      # Manganese - solid solution strengthening
 }
 ```
 
 **🧪 Materials Science Insights:**
-- **Titanium** shows strongest correlation (r=0.456) - acts as strong carbide/nitride former
-- **Chromium** (r=0.399) enhances hardenability and provides solid solution strengthening
-- **Nickel** (r=0.362) balances strength with toughness in steel microstructure
+- **Titanium** shows strongest correlation - acts as strong carbide/nitride former
+- **Chromium** enhances hardenability and provides solid solution strengthening
+- **Nickel** balances strength with toughness in steel microstructure
 - **Iron (Fe)** naturally dominates composition (~85-95% in most samples)
 
 ### 3️⃣ Magpie Feature Correlation Analysis
@@ -89,26 +88,16 @@ element_correlations = {
 ```python
 # Results from our correlation analysis
 top_magpie_features = {
-    'mean Electronegativity': 0.724,        # Electronic bonding effects
-    'avg_dev NsValence': 0.671,             # Valence electron distribution
-    'avg_dev NsUnfilled': 0.671,            # Unfilled electron shells
-    'mean NsValence': 0.669,                # Mean valence electrons
-    'mean NsUnfilled': 0.669,               # Mean unfilled shells
-    'mean GSvolume_pa': 0.668,              # Atomic volume effects
-    'avg_dev GSvolume_pa': 0.644,           # Volume distribution
-    'range NsValence': 0.637,               # Valence range
-    'range NsUnfilled': 0.637,              # Unfilled shell range
-    'std NsValence': 0.623,                 # Valence variability
-    'max NsValence': 0.622,                 # Maximum valence
-    'std NsUnfilled': 0.622,                # Unfilled shell variability
-    'max NsUnfilled': 0.622,                # Maximum unfilled shells
-    'min GSvolume_pa': 0.619,               # Minimum atomic volume
-    'avg_dev AtomicWeight': 0.619           # Atomic weight distribution
+    'mean Electronegativity': 0.421,        # Electronic bonding effects
+    'avg_dev NsValence': 0.397,             # Valence electron distribution
+    'avg_dev NsUnfilled': 0.397,            # Unfilled electron shells
+    'mean NsValence': 0.391,                # Mean valence electrons
+    'mean NsUnfilled': 0.391,               # Mean unfilled shells
 }
 ```
 
 **🔬 Physics-Based Insights:**
-- **Electronegativity** (r=0.724) - strongest predictor, relates to bond strength
+- **Electronegativity** - strongest predictor, relates to bond strength
 - **Electronic Structure Features** dominate top correlations (valence, unfilled shells)
 - **Atomic Volume Features** indicate size effects in strengthening mechanisms
 - **Statistical Descriptors** (mean, std, range) capture compositional complexity effects
@@ -121,17 +110,17 @@ top_magpie_features = {
 # Relationship patterns observed
 scatter_analysis = {
     'Ti vs Yield Strength': {
-        'correlation': 0.456,
+        'correlation': 0.511,
         'pattern': 'Strong positive linear trend',
         'insight': 'Ti content directly increases strength via carbide formation'
     },
     'Cr vs Yield Strength': {
-        'correlation': 0.399, 
-        'pattern': 'Positive correlation with scatter',
+        'correlation': 0.409, 
+        'pattern': 'Negative correlation with scatter',
         'insight': 'Cr strengthening depends on other alloying elements'
     },
     'Ni vs Yield Strength': {
-        'correlation': 0.362,
+        'correlation': 0.257,
         'pattern': 'Moderate positive trend',
         'insight': 'Ni provides balanced strength-toughness improvement'
     }
@@ -165,7 +154,7 @@ correlation_clusters = {
 ```
 
 **🔍 Key Correlation Patterns:**
-- **High Internal Correlations:** Electronic features are highly correlated (r > 0.8)
+- **High Internal Correlations:** Electronic features are highly correlated
 - **Redundancy Identified:** Many statistical descriptors provide similar information
 - **✂Feature Selection Opportunity:** ~30-40% dimensionality reduction possible
 - **Color Scheme:** Used absolute correlation values to highlight relationship strength
